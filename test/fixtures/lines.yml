@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: MyString
+  indent: 1
+  description: MyString
+  unit: MyString
+  general_rate: MyString
+  special_rate: MyString
+  col2_rate: MyString
+
+two:
+  code: MyString
+  indent: 1
+  description: MyString
+  unit: MyString
+  general_rate: MyString
+  special_rate: MyString
+  col2_rate: MyString
