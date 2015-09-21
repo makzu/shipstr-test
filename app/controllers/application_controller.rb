@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def search
-    lines = Line.where("description LIKE ?", "%#{params[:term]}%")
+    lines = Line.where("description LIKE ?", "%#{params[:term]}%").order("id ASC")
     @line_ids = lines.map {|l| l.id }
     @chapters = lines.map {|l| l.chapter }.uniq
   end
