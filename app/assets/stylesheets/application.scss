@@ -1,2 +1,44 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body {
+  background-color: #9696D6;
+}
+
+.container {
+  background-color: #EFEFEF;
+}
+
+.legend {
+  font-weight: bold;
+  text-align: center;
+}
+
+.rate_line {
+  &:nth-child(even) {
+    background-color: #DADADA;
+  }
+  &:nth-child(odd) {
+    background-color: #EFEFEF;
+  }
+}
+
+.row.heading {
+  border-top-width: 4px;
+}
+.row.highlighted {
+  background-color: yellowgreen;
+  font-weight: bold;
+}
+
+.indent-1 { padding-left: 1ex; }
+.indent-2 { padding-left: 2ex; }
+.indent-3 { padding-left: 3ex; }
+.indent-4 { padding-left: 4ex; }
+.indent-5 { padding-left: 5ex; }
+.indent-6 { padding-left: 6ex; }
+.indent-7 { padding-left: 7ex; }
+.indent-8 { padding-left: 8ex; }
+.indent-9 { padding-left: 9ex; }
+.indent-10 { padding-left: 10ex; }
+

@@ -1,0 +1,39 @@
+<% already_anchored = false %>
+
+<div class="page-header">
+  <h1>Search results for <strong><%= params[:term] %></strong>:</h1>
+</div>
+
+<div class="row legend">
+  <div class="col-md-2 col-sm-2">Heading / Subheading</div>
+  <div class="col-md-4 col-sm-9">Article Description</div>
+  <div class="col-md-1 col-sm-1">Unit of Quantity</div>
+  <div class="col-md-2 col-sm-4">General Rate</div>
+  <div class="col-md-2 col-sm-4">Special Rate</div>
+  <div class="col-md-1 col-sm-4">Column 2 Rate</div>
+</div>
+
+<% @chapters.each do |chapter| %>
+  <div class="row chapter_title"><div class="col-md-12">
+    <h3>Chapter <%=chapter.code %>: <%= chapter.name %></h3>
+  </div></div>
+    <% chapter.lines.each do |line| %>
+      <div class="row rate_line
+        <%= "highlighted" if @line_ids.include? line.id %>
+        <%= "heading" if line.code.length == 4 %>
+      ">
+        <% if @line_ids.include? line.id && !already_anchored %>
+          <% already_anchored = true %>
+          <a name="res"></a>
+        <% end %>
+        <div class="col-md-2 col-sm-2"><%= line.code %></div>
+        <div class="col-md-4 col-sm-9">
+          <div class="description indent-<%=line.indent%>"><%= line.description.html_safe %></div>
+        </div>
+        <div class="col-md-1 col-sm-1"><%= line.unit %></div>
+        <div class="col-md-2 col-sm-4"><%= line.general_rate %></div>
+        <div class="col-md-2 col-sm-4"><%= line.special_rate %></div>
+        <div class="col-md-1 col-sm-4"><%= line.col2_rate %></div>
+      </div>
+    <% end %>
+<% end %>
