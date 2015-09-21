@@ -30,10 +30,10 @@
         <div class="col-md-4 col-sm-9">
           <div class="description indent-<%=line.indent%>"><%= line.description.html_safe %></div>
         </div>
-        <div class="col-md-1 col-sm-1"><%= line.unit %></div>
-        <div class="col-md-2 col-sm-4"><%= line.general_rate %></div>
-        <div class="col-md-2 col-sm-4"><%= line.special_rate %></div>
-        <div class="col-md-1 col-sm-4"><%= line.col2_rate %></div>
+        <div class="col-md-1 col-sm-1"><%= line.unit.html_safe %></div>
+        <div class="col-md-2 col-sm-4"><%= line.general_rate.html_safe %></div>
+        <div class="col-md-2 col-sm-4"><%= line.special_rate.html_safe %></div>
+        <div class="col-md-1 col-sm-4"><%= line.col2_rate.html_safe %></div>
       </div>
     <% end %>
 <% end %>
