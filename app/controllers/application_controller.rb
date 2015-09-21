@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
     if params[:term].nil? or params[:term].empty?
       redirect_to "/"
     else
-      redirect_to "/search/#{params[:term]}#res"
+      redirect_to "/search/#{params[:term]}"
     end
   end
 end

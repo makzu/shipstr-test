@@ -20,10 +20,6 @@
         <%= "highlighted" if @line_ids.include? line.id %>
         <%= "heading" if line.code.length == 4 %>
       ">
-        <% if @line_ids.include? line.id && !already_anchored %>
-          <% already_anchored = true %>
-          <a name="res"></a>
-        <% end %>
         <div class="col-md-2 col-sm-2"><%= line.code %></div>
         <div class="col-md-4 col-sm-9">
           <div class="description indent-<%=line.indent%>"><%= line.description.html_safe %></div>
