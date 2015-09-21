@@ -15,3 +15,9 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+
+function resize_legend() {
+  $('#search-legend').width($('.container').width() + 30);
+}
+$(window).scroll(function () { resize_legend(); });
+$(window).resize(function () { resize_legend(); });

@@ -9,9 +9,14 @@ body {
   background-color: #EFEFEF;
 }
 
-.legend {
+#search-legend {
   font-weight: bold;
   text-align: center;
+  background-color: #EFEFEF;
+}
+#search-legend.affix {
+  z-index: 5;
+  top: 0;
 }
 
 .rate_line {
