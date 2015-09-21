@@ -208,5 +208,5 @@ CSV.to_enum(:foreach, './db/htsdata.csv').drop(1).each do |row|
   line_unit = row[3]
   line_unit.tr!('"[]\\', '')
 
-  Line.create(code: row[0], indent: row[1], description: row[2], unit: line_unit, general_rate: row[4], special_rate: row[5], col2_rate: row[6], chapter: Chapter.find_by_code(current_chapter))
+  Line.create(code: row[0], indent: row[1], description: row[2], unit: line_unit, general_rate: row[4], special_rate: row[5].sub(',', ', '), col2_rate: row[6], chapter: Chapter.find_by_code(current_chapter))
 end
