@@ -197,8 +197,11 @@ Chapter.create([
 
 puts 'loading CSV'
 require 'csv'
+current_chapter = "01"
 CSV.to_enum(:foreach, './db/htsdata.csv').drop(1).each do |row|
-  unless row[0].empty?
+  if row[0].empty?
+    puts "Adding new heading in chapter #{current_chapter}"
+  else
     current_chapter = row[0][0..1]
   end
 
